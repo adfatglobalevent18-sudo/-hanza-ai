@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+*.save
+*.save.*
+*.bak
+.DS_Store

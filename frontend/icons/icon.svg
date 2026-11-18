@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#073b9a"/>
+  <text x="256" y="310"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="210"
+        font-weight="700"
+        fill="white">H</text>
+  <path d="M95 315 C180 230, 330 230, 420 145"
+        fill="none"
+        stroke="#18b8ff"
+        stroke-width="28"
+        stroke-linecap="round"/>
+  <circle cx="420" cy="145" r="18" fill="white"/>
+  <text x="256" y="405"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="58"
+        font-weight="700"
+        fill="white">HANZA AI</text>
+</svg>

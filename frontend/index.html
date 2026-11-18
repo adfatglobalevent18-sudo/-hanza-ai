@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#073b9a">
+<meta name="description" content="HANZA AI — Your Intelligence. Your Possibilities.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>HANZA AI</title>
+<style>
+:root{--navy:#061b55;--blue:#0755db;--cyan:#11b8f5;--pale:#eef5ff;--ink:#102451;--muted:#60739b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:linear-gradient(160deg,#061b55 0,#0755db 38%,#edf5ff 38%,#f7faff 100%);color:var(--ink);min-height:100vh}
+header{color:white;padding:22px 18px 26px;max-width:980px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#fff,#8de5ff);color:#0645b5;display:grid;place-items:center;font-size:29px;font-weight:900;box-shadow:0 5px 20px #001b6b80}.brand h1{font-size:25px;margin:0;letter-spacing:1px}.brand small{display:block;color:#cde7ff;font-size:11px;letter-spacing:1.3px;margin-top:2px}.menu{border:1px solid #ffffff60;background:#ffffff18;color:white;border-radius:12px;padding:9px 12px;font-size:18px}
+.greeting{padding:30px 0 22px}.greeting h2{font-size:clamp(26px,6vw,38px);margin:0 0 8px}.greeting p{margin:0;color:#dcecff;font-size:17px}
+main{max-width:980px;margin:-2px auto 0;padding:0 15px 100px}.panel{background:white;border-radius:23px;padding:14px;box-shadow:0 12px 35px #0b3e9c20}
+.ask{display:flex;gap:8px}.ask input{min-width:0;flex:1;border:0;outline:0;padding:13px 10px;font-size:15px;color:var(--ink)}button{cursor:pointer}.send{border:0;border-radius:15px;background:var(--blue);color:white;padding:0 18px;font-size:20px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:25px 2px 12px}.section-title h3{margin:0;font-size:18px}.section-title span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{border:1px solid #d9e7ff;background:linear-gradient(145deg,#fff,#f0f6ff);border-radius:18px;padding:16px 12px;text-align:left;min-height:112px;color:var(--ink);box-shadow:0 4px 12px #1a5ac014}.tile:active{transform:scale(.98)}.tile .ico{font-size:25px}.tile b{display:block;margin:8px 0 3px;font-size:15px}.tile small{color:var(--muted);font-size:12px}
+.premium{margin-top:18px;border-radius:19px;padding:17px;background:linear-gradient(110deg,#061b55,#0755db);color:white;display:flex;gap:12px;align-items:center;justify-content:space-between}.premium strong{font-size:15px}.premium p{font-size:12px;color:#d7e8ff;margin:5px 0 0}.premium button{background:#ffd34e;color:#14264b;border:0;border-radius:30px;padding:11px 14px;font-weight:800;white-space:nowrap}
+.chatbox{display:none;margin-top:16px}.chatbox.active{display:block}.chathead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.chathead h3{margin:0}.close{border:0;background:#eef4ff;border-radius:10px;padding:7px 11px}.messages{height:260px;overflow:auto;background:#f4f8ff;border-radius:15px;padding:12px;display:flex;flex-direction:column;gap:9px}.msg{max-width:88%;padding:10px 12px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-wrap}.bot{background:white;border:1px solid #e1eaff;align-self:flex-start}.user{background:#0755db;color:white;align-self:flex-end}.chatentry{display:flex;gap:8px;margin-top:10px}.chatentry input{flex:1;min-width:0;border:1px solid #d7e4fa;border-radius:12px;padding:12px;font-size:14px}.chatentry button{border:0;background:var(--blue);color:white;border-radius:12px;padding:0 15px}
+.notice{font-size:11px;color:#6c7b99;margin:10px 2px 0;line-height:1.4}.feature-view{display:none;margin-top:16px}.feature-view.active{display:block}.feature-view h3{margin:0 0 8px}.feature-view p{color:var(--muted);line-height:1.5}.back{border:0;background:#eaf2ff;color:#0645b5;padding:9px 12px;border-radius:10px;margin-bottom:12px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid #dce7f8;display:flex;justify-content:space-around;padding:10px 5px max(10px,env(safe-area-inset-bottom));z-index:5}nav button{border:0;background:none;color:#53688f;font-size:11px;padding:4px 12px}nav b{display:block;font-size:20px;margin-bottom:2px}nav button.active{color:#0755db;font-weight:800}
+footer{text-align:center;color:#7282a1;font-size:11px;margin:22px 0}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{min-height:130px}header{padding-top:32px}.greeting{padding-top:40px}.premium{padding:20px 24px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top"><div class="brand"><div class="logo">H</div><div><h1>HANZA AI</h1><small>YOUR INTELLIGENCE. YOUR POSSIBILITIES.</small></div></div><button class="menu" aria-label="Menu" onclick="showFeature('Settings')">☰</button></div>
+ <div class="greeting"><h2>Hello! 👋</h2><p>What would you like to do today?</p></div>
+</header>
+<main>
+ <section class="panel">
+  <form class="ask" id="askForm"><input id="mainPrompt" placeholder="Ask HANZA AI anything..." aria-label="Ask HANZA AI"><button class="send" aria-label="Send">➤</button></form>
+ </section>
+ <div class="section-title"><h3>Explore HANZA AI</h3><span>Choose a tool</span></div>
+ <section class="grid" id="tiles">
+  <button class="tile" onclick="openChat()"><span class="ico">💬</span><b>AI Chat</b><small>Ask questions and get help</small></button>
+  <button class="tile" onclick="showFeature('Learning Studio')"><span class="ico">🎓</span><b>Learning Studio</b><small>Understand new topics</small></button>
+  <button class="tile" onclick="showFeature('Image Studio')"><span class="ico">🖼️</span><b>Image Studio</b><small>Plan and create images</small></button>
+  <button class="tile" onclick="showFeature('Video Studio')"><span class="ico">🎬</span><b>Video Studio</b><small>Build video concepts</small></button>
+  <button class="tile" onclick="showFeature('Coding Studio')"><span class="ico">💻</span><b>Coding Studio</b><small>Learn and write code</small></button>
+  <button class="tile" onclick="showFeature('Business Assistant')"><span class="ico">💼</span><b>Business Assistant</b><small>Ideas and planning</small></button>
+  <button class="tile" onclick="showFeature('Translation')"><span class="ico">🌐</span><b>Translation</b><small>Bridge language gaps</small></button>
+  <button class="tile" onclick="showFeature('Voice AI')"><span class="ico">🎙️</span><b>Voice AI</b><small>Speak your questions</small></button>
+ </section>
+ <section class="premium"><div><strong>✨ HANZA AI Premium</strong><p>More advanced tools and higher usage limits.</p></div><button onclick="showFeature('Premium')">Explore</button></section>
+ <section class="panel chatbox" id="chatbox"><div class="chathead"><h3>💬 HANZA AI Chat</h3><button class="close" onclick="closePanels()">Close</button></div><div class="messages" id="messages"><div class="msg bot">Welcome to HANZA AI! This preview can demonstrate the interface. Connect an AI service to enable real AI answers.</div></div><form class="chatentry" id="chatForm"><input id="chatPrompt" placeholder="Type your message..." aria-label="Chat message"><button>Send</button></form><p class="notice">Prototype mode: replies are sample guidance, not generated by a connected AI model.</p></section>
+ <section class="panel feature-view" id="featureView"><button class="back" onclick="closePanels()">← Back to home</button><h3 id="featureTitle"></h3><p id="featureText"></p><p class="notice">This tool is part of the planned HANZA AI platform. Its full capabilities will be enabled as the relevant AI services are connected.</p></section>
+ <footer>HANZA AI · Your Intelligence. Your Possibilities.</footer>
+</main>
+<nav><button class="active" onclick="navTo('Home',this)"><b>⌂</b>Home</button><button onclick="navTo('History',this)"><b>◷</b>History</button><button onclick="navTo('Favorites',this)"><b>☆</b>Favorites</button><button onclick="navTo('Settings',this)"><b>⚙</b>Settings</button></nav>
+<script>
+const chatbox=document.getElementById('chatbox'), featureView=document.getElementById('featureView'), messages=document.getElementById('messages');
+function openChat(text=''){closePanels();chatbox.classList.add('active');if(text){document.getElementById('chatPrompt').value=text;}document.getElementById('chatPrompt').focus();}
+function closePanels(){chatbox.classList.remove('active');featureView.classList.remove('active');}
+function showFeature(name){closePanels();document.getElementById('featureTitle').textContent=name;const descriptions={
+'Learning Studio':'Choose a school subject or skill and get help understanding it. Real tutoring responses will be available after AI integration.',
+'Image Studio':'Prepare image ideas and prompts. Image generation will be connected in a later development stage.',
+'Video Studio':'Plan scenes, scripts and storyboards. Video generation is planned for a future release.',
+'Coding Studio':'Explore programming concepts and draft code with guided explanations.',
+'Business Assistant':'Work on business ideas, marketing plans, budgets and customer communication.',
+'Translation':'Translate between supported languages after the language service is connected.',
+'Voice AI':'Voice input and spoken responses are planned for a later release.',
+'Premium':'The freemium plan will include free access with optional paid upgrades. Payments and premium limits are not active in this preview.',
+'Settings':'Account, language, privacy and appearance settings will be added as the app develops.',
+'History':'Your recent conversations will appear here after account and cloud storage features are added.',
+'Favorites':'Saved answers and tools will appear here in a later version.'
+};document.getElementById('featureText').textContent=descriptions[name]||'This section is planned for a future release.';featureView.classList.add('active');}
+function addMessage(text,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=text;messages.appendChild(d);messages.scrollTop=messages.scrollHeight;}
+document.getElementById('askForm').addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('mainPrompt').value.trim();if(v)openChat(v);});
+document.getElementById('chatForm').addEventListener('submit',async e=>{e.preventDefault();const input=document.getElementById('chatPrompt'),v=input.value.trim();if(!v)return;addMessage(v,'user');input.value='';
+  try {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: v })
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || 'The AI service is not available yet.');
+    addMessage(data.reply || 'I did not receive a reply. Please try again.', 'bot');
+  } catch (err) {
+    addMessage('HANZA AI is not connected to its backend yet. When the server is deployed, real AI replies will appear here. (' + err.message + ')', 'bot');
+  }});
+function navTo(name,el){document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));el.classList.add('active');if(name==='Home'){closePanels();window.scrollTo({top:0,behavior:'smooth'});}else showFeature(name);}
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
