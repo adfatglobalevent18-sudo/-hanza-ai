@@ -4,8 +4,8 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { fileURLToPath } from "node:url";
-
 const app = express();
+app.set("trust proxy", 1);0
 const port = Number(process.env.PORT || 3000);
 const apiKey = process.env.GEMINI_API_KEY;
 const model = process.env.GEMINI_MODEL || "gemini-3.8-flash";
